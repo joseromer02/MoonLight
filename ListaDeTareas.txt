@@ -1,0 +1,4 @@
+1. Implentar un Login para acceder a la pagina principal
+2. Cambiar las imagenes, que vayan de acuerdo con el tema
+3. 
+4. 
