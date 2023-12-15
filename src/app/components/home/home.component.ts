@@ -18,25 +18,25 @@ productAlmacen=[
   {
     prodId:1, 
     img:'./../../assets/images/t1.jpg',
-   precio:400,
+   precio:120,
    
 },
 {
   prodId:2,
   img:'./../../assets/images/t2.jpg',
-   precio:300,
+   precio:150,
   
 },
 {
   prodId:3,
   img:'./../../assets/images/t3.jpg',
-   precio:400,
+   precio:120,
   
 },
 {
   prodId:4,
   img:'./../../assets/images/t4.jpg',
-   precio:400,
+   precio:100,
    
 }
 
