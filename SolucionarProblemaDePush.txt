@@ -1,0 +1,4 @@
+git config user.name "joseromer02" 
+git config user.email "josefranciscor641@gmail.com"
+git remote set-url origin https://github.com/joseromer02/MoonLight.git
+git remote set-url origin https://joseromer02@github.com/joseromer02/MoonLight.git
