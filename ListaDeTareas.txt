@@ -1,5 +1,6 @@
 1. Implentar un Login para acceder a la pagina principal, con cifrado
-2. Cambiar las imagenes, que vayan de acuerdo con el tema pero las imagenes en SVg
-3. Cambiar el idioma a espanol 
-4. Cambiar el precio a Bs
-5. Cambiar los colores de la pagina principal
+2. Implementar un deslogear
+3. Cambiar las imagenes, que vayan de acuerdo con el tema pero las imagenes en SVg
+4. Cambiar el idioma a espanol 
+5. Cambiar el precio a Bs
+6. Cambiar los colores de la pagina principal
