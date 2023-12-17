@@ -1,0 +1,12 @@
+<div>
+  <label for="usuario">Usuario:</label>
+  <input type="text" id="usuario" [(ngModel)]="usuario" />
+
+  <label for="contrasena">Contraseña:</label>
+  <div class="password-container">
+    <input type="{{ mostarcontrasena ? 'text' : 'password' }}" id="contrasena" [(ngModel)]="contrasena" />
+    <span (click)="contraVisible()">{{ mostarcontrasena ? '👁️' : '🔒' }}</span>
+  </div>
+
+  <button (click)="onSubmit()">Iniciar sesión</button>
+</div>
