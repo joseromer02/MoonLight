@@ -15,7 +15,8 @@ export class LoginComponent {
   // Definir múltiples usuarios con contraseñas encriptadas
   usuariosCorrectos = [
     { usuario: 'jose', contrasena: 'jose' }, 
-    { usuario: 'otroUsuario', contrasena: 'otraContrasena' },
+    { usuario: 'jose2', contrasena: 'jose2' },
+    { usuario: 'jose3', contrasena: 'jose3' },
   ];
 
   constructor(private router: Router) {}
