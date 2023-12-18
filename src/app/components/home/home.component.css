@@ -1,9 +1,37 @@
-.box{
-    border:1px solid burlywood;
-    border-radius: 20px;
-    padding: 10px;
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.box {
+  max-width: 400px; 
+  margin: 0 auto; 
+  border: 1px solid burlywood;
+  border-radius: 20px;
+  padding: 10px;
 }
+
+.product_image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 3000px;
+}
+
+.content h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .content span {
-    font-size: 18px;
-    font-weight: 800px;
+  font-size: 18px;
+  font-weight: 800;
 }
+
+.custom-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
