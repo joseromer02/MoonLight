@@ -17,25 +17,25 @@ export class HomeComponent implements OnInit {
 productAlmacen=[
   {
     prodId:1, 
-    img:'./../../assets/images/t1.jpg',
+    img:'./../../assets/images/foto1.svg',
    precio:120,
    
 },
 {
   prodId:2,
-  img:'./../../assets/images/t2.jpg',
+  img:'./../../assets/images/foto2.svg',
    precio:150,
   
 },
 {
   prodId:3,
-  img:'./../../assets/images/t3.jpg',
+  img:'./../../assets/images/foto3.svg',
    precio:120,
   
 },
 {
   prodId:4,
-  img:'./../../assets/images/t4.jpg',
+  img:'./../../assets/images/foto4.svg',
    precio:100,
    
 }
