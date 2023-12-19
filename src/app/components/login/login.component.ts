@@ -14,57 +14,30 @@ export class LoginComponent {
 
   // Definir múltiples usuarios con contraseñas encriptadas
   usuariosCorrectos = [
-    { usuario: 'jose', contrasena: 'jose' }, 
-    { usuario: 'jose2', contrasena: 'jose2' },
-    { usuario: 'jose3', contrasena: 'jose3' },
+    { usuario: 'jose', contrasena: '1ec4ed037766aa181d8840ad04b9fc6e195fd37dedc04c98a5767a67d3758ece' }, 
+    { usuario: 'jose2', contrasena: 'b8b9b90248616b9e6e3db1c619da7a6a83ae9001b74ecfb5d3041fbbdffa8958' },
+    { usuario: 'jose3', contrasena: '562257c924d8712b8da34e2e421105051e24d72e771791f8d09062aec8b1890c' },
   ];
 
   constructor(private router: Router) {}
 
-  onSubmit(): void {
-    // Encriptar la contraseña antes de compararla
-    const contrasenaEncriptada = this.encriptarContrasena(this.contrasena);
+  onSubmit(usuarioRequest : string, contrasenaRequest : string): void {
 
-    // Verificar las credenciales
-    const usuarioCorrecto = this.usuariosCorrectos.find(u => u.usuario === this.usuario);
-
-    if (usuarioCorrecto) {
-      const contrasenaCorrectaEncriptada = this.encriptarContrasena(usuarioCorrecto.contrasena);
-
-      console.log('Contraseña ingresada:', this.contrasena);
-      console.log('Contraseña encriptada ingresada:', contrasenaEncriptada);
-
-      console.log('Contraseña almacenada:', usuarioCorrecto.contrasena);
-      console.log('Contraseña encriptada almacenada:', contrasenaCorrectaEncriptada);
-
-      if (contrasenaEncriptada === contrasenaCorrectaEncriptada) {
-        // Redirigir a la página después de iniciar sesión correctamente.
-        this.router.navigate(['/home']);
-      } else {
-        console.log('Credenciales incorrectas');
-      }
-    } else {
-      console.log('Usuario no encontrado');
-    }
-  }
+        let usuarioOpt = this.usuariosCorrectos.filter(
+          item => item.usuario == usuarioRequest
+        );
+    
+        console.log(this.encriptarContrasena(contrasenaRequest));
+    
+        // @ts-ignore
+        if (usuarioOpt.length > 0 && usuarioOpt[0].contrasena === this.encriptarContrasena(contrasenaRequest)) {
+          this.router.navigate(['/home']);
+        }
+        }
 
   // Función para encriptar la contraseña
   private encriptarContrasena(contrasena: string): string {
     return SHA256(contrasena).toString();
-  }
-
-  // Función para generar una contraseña encriptada (solo para propósitos de ejemplo)
-  private generarContrasenaEncriptada(contrasena: string): string {
-    return this.encriptarContrasena(contrasena);
-  }
-
-  // Ejemplo de uso para generar una contraseña encriptada
-  generarYMostrarContrasenaEncriptada(): void {
-    const contrasenaOriginal = 'nuevaContrasena'; // Cambia esto por la contraseña que desees
-    const contrasenaEncriptada = this.generarContrasenaEncriptada(contrasenaOriginal);
-
-    console.log('Contraseña Original:', contrasenaOriginal);
-    console.log('Contraseña Encriptada:', contrasenaEncriptada);
   }
 
   contraVisible() {
