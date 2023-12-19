@@ -11,6 +11,7 @@ export class LoginComponent {
   usuario: string = '';
   contrasena: string = '';
   mostarcontrasena: boolean = false;
+  errorLogin: boolean = false;
 
   // Definir múltiples usuarios con contraseñas encriptadas
   usuariosCorrectos = [
@@ -21,19 +22,15 @@ export class LoginComponent {
 
   constructor(private router: Router) {}
 
-  onSubmit(usuarioRequest : string, contrasenaRequest : string): void {
+  onSubmit(usuarioRequest: string, contrasenaRequest: string): void {
+    let usuarioOpt = this.usuariosCorrectos.find(item => item.usuario === usuarioRequest);
 
-        let usuarioOpt = this.usuariosCorrectos.filter(
-          item => item.usuario == usuarioRequest
-        );
-    
-        console.log(this.encriptarContrasena(contrasenaRequest));
-    
-        // @ts-ignore
-        if (usuarioOpt.length > 0 && usuarioOpt[0].contrasena === this.encriptarContrasena(contrasenaRequest)) {
-          this.router.navigate(['/home']);
-        }
-        }
+    if (usuarioOpt && usuarioOpt.contrasena === this.encriptarContrasena(contrasenaRequest)) {
+      this.router.navigate(['/home']);
+    } else {
+      this.mostrarMensajeError();
+    }
+  }
 
   // Función para encriptar la contraseña
   private encriptarContrasena(contrasena: string): string {
@@ -42,5 +39,9 @@ export class LoginComponent {
 
   contraVisible() {
     this.mostarcontrasena = !this.mostarcontrasena;
+  }
+
+  private mostrarMensajeError(): void {
+    window.alert('Error al ingresar datos. Verifica tu usuario y contraseña.');
   }
 }
